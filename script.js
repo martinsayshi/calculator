@@ -68,6 +68,7 @@ function updateScreen() {
     const equation = operate(firstNumber, secondNumber, operator);
     const result = Number.isInteger(equation) ? equation : equation.toFixed(6);
     screen.textContent = result;
+    checkDecimal();
 }
 
 function clearAll() {
@@ -124,3 +125,5 @@ buttons.forEach(button => {
 equals.addEventListener('click', calculateEquals);
 clear.addEventListener('click', clearAll);
 cancel.addEventListener('click', cancelOne);
+
+document.querySelector("#year").textContent = new Date().getFullYear();
